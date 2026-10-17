@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Under the Hood — How does a car work?</title>
+  <meta name="description" content="An interactive guide to how cars work. Choose a gas, diesel or electric car, take it apart in 3D and learn what every part does.">
+  <meta name="theme-color" content="#06080c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff7a2f'/%3E%3Cpath d='M6 19l3-6h14l3 6v4H6z' fill='%2306080c'/%3E%3Ccircle cx='11' cy='23' r='2.5' fill='%23ff7a2f' stroke='%2306080c' stroke-width='2'/%3E%3Ccircle cx='21' cy='23' r='2.5' fill='%23ff7a2f' stroke='%2306080c' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <header class="nav scrolled" id="nav">
+    <a class="brand" href="index.html" data-keep-lang aria-label="Under the Hood">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 15l2.2-4.6A2 2 0 0 1 7 9.3h10a2 2 0 0 1 1.8 1.1L21 15v3H3z"/><circle cx="7.5" cy="18" r="2"/><circle cx="16.5" cy="18" r="2"/></svg>
+      </span>
+      <span class="brand-name" data-i18n="brand"></span>
+    </a>
+    <div class="lang" role="group" data-i18n-label="lang">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="uk">UA</button>
+      <button type="button" data-lang="ru">RU</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="container">
+        <p class="eyebrow" data-i18n="home.eyebrow"></p>
+        <h1 data-i18n="home.title"></h1>
+        <p class="lead" data-i18n="home.sub"></p>
+      </div>
+    </section>
+
+    <section class="choose">
+      <div class="container">
+        <h2 class="choose-title" data-i18n="home.choose"></h2>
+        <div class="car-cards">
+          <a class="car-card" href="gas.html" data-keep-lang data-car="gas">
+            <span class="car-card-stage">
+              <canvas aria-hidden="true"></canvas>
+              <span class="car-card-drag" data-i18n="home.drag"></span>
+            </span>
+            <span class="car-card-body">
+              <span class="car-card-type" data-i18n="cars.gas"></span>
+              <span class="car-card-model" data-i18n="home.cards.gas.model"></span>
+              <span class="car-card-tagline" data-i18n="home.cards.gas.tagline"></span>
+              <span class="car-card-blurb" data-i18n="home.cards.gas.blurb"></span>
+              <span class="car-card-cta"><span data-i18n="home.explore"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+          <a class="car-card" href="diesel.html" data-keep-lang data-car="diesel">
+            <span class="car-card-stage">
+              <canvas aria-hidden="true"></canvas>
+              <span class="car-card-drag" data-i18n="home.drag"></span>
+            </span>
+            <span class="car-card-body">
+              <span class="car-card-type" data-i18n="cars.diesel"></span>
+              <span class="car-card-model" data-i18n="home.cards.diesel.model"></span>
+              <span class="car-card-tagline" data-i18n="home.cards.diesel.tagline"></span>
+              <span class="car-card-blurb" data-i18n="home.cards.diesel.blurb"></span>
+              <span class="car-card-cta"><span data-i18n="home.explore"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+          <a class="car-card" href="electric.html" data-keep-lang data-car="electric">
+            <span class="car-card-stage">
+              <canvas aria-hidden="true"></canvas>
+              <span class="car-card-drag" data-i18n="home.drag"></span>
+            </span>
+            <span class="car-card-body">
+              <span class="car-card-type" data-i18n="cars.electric"></span>
+              <span class="car-card-model" data-i18n="home.cards.electric.model"></span>
+              <span class="car-card-tagline" data-i18n="home.cards.electric.tagline"></span>
+              <span class="car-card-blurb" data-i18n="home.cards.electric.blurb"></span>
+              <span class="car-card-cta"><span data-i18n="home.explore"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare">
+      <div class="container">
+        <p class="eyebrow" data-i18n="home.compare.eyebrow"></p>
+        <h2 class="section-title" data-i18n="home.compare.title"></h2>
+        <div class="compare-wrap">
+          <table class="compare-table" id="compareTable"></table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-service">
+      <div class="container">
+        <p class="eyebrow" data-i18n="service.home.eyebrow"></p>
+        <h2 class="section-title" data-i18n="service.home.title"></h2>
+        <p class="section-text" data-i18n="service.home.text"></p>
+        <ol class="rules" id="rules"></ol>
+        <div class="service-links">
+          <a href="gas.html#service" data-keep-lang data-car="gas"><span data-i18n="cars.gas"></span><small data-i18n="service.home.cta"></small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="diesel.html#service" data-keep-lang data-car="diesel"><span data-i18n="cars.diesel"></span><small data-i18n="service.home.cta"></small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="electric.html#service" data-keep-lang data-car="electric"><span data-i18n="cars.electric"></span><small data-i18n="service.home.cta"></small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <p class="service-caution" data-i18n="service.caution"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p data-i18n="footer.note"></p>
+      <p class="footer-muted" data-i18n="footer.built"></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/service.js"></script>
+  <script src="js/cars/gas.js"></script>
+  <script src="js/cars/diesel.js"></script>
+  <script src="js/cars/electric.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
